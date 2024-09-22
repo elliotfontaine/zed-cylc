@@ -1,0 +1,6 @@
+.DS_Store
+
+/*.wasm
+/target
+grammars/
+debug
