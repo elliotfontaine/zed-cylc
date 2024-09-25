@@ -11,7 +11,6 @@
   name: (nametag) @name) @item
 
 (recurrence
-  (jinja2_expression)? @name
   cyclepoints: (_) @name
   (jinja2_expression)? @name
   "=" @context.extra
