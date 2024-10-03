@@ -9,4 +9,4 @@ repository = "https://github.com/elliotfontaine/zed-cylc"
 
 [grammars.cylc]
 repository = "https://github.com/elliotfontaine/tree-sitter-cylc"
-commit = "7689b319316f134a800288263d13238f7042f39d"
+commit = "30dd40d9bf23912e4aefa93eeb4c7090bda3d0f6"

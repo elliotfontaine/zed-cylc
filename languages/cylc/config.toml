@@ -7,15 +7,17 @@ tab_size = 4
 autoclose_before = ",]}"
 brackets = [
     { start = "[", end = "]", close = true, newline = false },
-    { start = "{", end = "}", close = true, newline = false },
+    { start = "{{", end = "}}", close = true, newline = false },
+    { start = "{%", end = "%}", close = true, newline = false },
+    { start = "{#", end = "#}", close = true, newline = false },
     { start = "'''", end = "'''", close = true, newline = true, not_in = [
         "multiline_string",
-        "multiline_graphstring",
+        "multiline_graph_string",
         "comment",
     ] },
     { start = '"""', end = '"""', close = true, newline = true, not_in = [
         "multiline_string",
-        "multiline_graphstring",
+        "multiline_graph_string",
         "comment",
     ] },
 ]

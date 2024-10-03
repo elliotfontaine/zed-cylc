@@ -1,8 +1,5 @@
 ((setting
-  key: (key) @key (#any-of? @key
-      "script"
-      "pre-script"
-      "post-script")
+  key: (key) @key (#match? @key "script")
   value: (_ 
     (string_content) @content))
  (#set! "language" "bash"))
@@ -12,10 +9,9 @@
 ; language, instead of using the root node.
 ; See this proposal:
 ; https://github.com/tree-sitter/tree-sitter/issues/3625
-((subsection_2
-  name: (nametag) @section_name (#match? @section_name "environment")
-  (setting) @content)
+((task_section
+  (sub_section_2
+    name: (_) @section_name (#match? @section_name "environment")
+    (setting) @content))
  (#set! "language" "bash")
  (#set! combined))
-
-

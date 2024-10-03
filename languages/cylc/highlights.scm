@@ -1,78 +1,82 @@
-(ERROR) @emphasis.strong
-
-[
-  (jinja2_expression)
-  (jinja2_statement)
-  (jinja2_comment)
-] @text.literal
-
 (include_statement) @embedded
 
 (comment) @comment
 
-(root_section
-  "[" @operator
-  name: (nametag) @title
-  "]" @operator)
-
-(subsection_1
-  "[[" @operator
-  name: (nametag) @title
-  "]]" @operator)
-
-(subsection_2
-  "[[[" @operator
-  name: (nametag) @title
-  "]]]" @operator)
+(_
+  brackets_open: _ @operator
+  name: _? @title
+  brackets_close: _ @operator)
 
 (graph_section
-  "[[" @property
-  name: (nametag) @hint
-  "]]" @property)
+  name: _? @property)
 
-(recurrence
-  cyclepoints: (cyclepoints) @property
-  "=" @operator)
+(task_section
+  name: _? @emphasis)
 
-(multiline_graphstring
-  (multiline_string_open) @operator
-  (multiline_string_close) @operator)
+(graph_setting
+  key: (_) @number
+  operator: (_)? @operator)
+
+(quoted_graph_string
+  quotes_open: _ @string
+  quotes_close: _ @string)
+
+(multiline_graph_string
+  quotes_open: _ @string
+  quotes_close: _ @string)
 
 [
   (graph_logical) 
   (graph_arrow)
+  (graph_parenthesis)
 ] @operator
 
+(intercycle_annotation
+  (recurrence) @number)
+
 (graph_task
-  (nametag) @emphasis)
+  xtrigger: _? @property
+  suicide: _? @property
+  name: _ @emphasis)
 
 (task_parameter
   "<" @punctuation
-  (nametag) @text.literal
+  name: (_)? @text.literal
+  ","? @punctuation
+  "="? @punctuation
+  selection: (_)? @text.literal
   ">" @punctuation)
 
 (intercycle_annotation
   "[" @punctuation
-  (cyclepoints) @property
+  (recurrence)? @number
   "]" @punctuation)
 
 (task_output
     ":" @punctuation
-    (nametag) @variable
+    (nametag) @variable)
+
+(task_output
     "?"? @punctuation)
 
 (setting
   key: (key) @variable
-  "=" @operator
+  operator: (_)? @operator
   value: [
     (unquoted_string) @string
     (quoted_string) @string
     (multiline_string) @string
     (boolean) @boolean
-    (number) @number
+    (integer) @number
   ]?)
 
-  (datetime) @property
+(datetime) @number
 
+[
+  (jinja2_expression)
+  (jinja2_statement)
+  (jinja2_comment)
+  (jinja2_shebang)
+] @text.literal
 
-
+(ERROR) @emphasis.strong
