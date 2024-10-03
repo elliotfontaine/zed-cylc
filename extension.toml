@@ -1,4 +1,4 @@
-id = "zed-cylc"
+id = "cylc"
 name = "Cylc"
 description = "Cylc support."
 version = "0.1.0"
