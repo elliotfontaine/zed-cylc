@@ -1,5 +1,5 @@
 ((setting
-  key: (key) @key (#match? @key "script")
+  key: (key) @key (#match? @key "^script$|\-script$|^script\-")
   value: (_ 
     (string_content) @content))
  (#set! "language" "bash"))
