@@ -22,9 +22,11 @@ It uses the grammar defined in [tree-sitter-cylc](https://github.com/elliotfonta
 
 ## Installation
 
-`zed-cylc` is not yet available in the official extension marketplace. To install it, follow these steps:
+`zed-cylc` is available in the official [Zed Extension Gallery](https://zed.dev/docs/extensions/installing-extensions) and can be installed directly from the Editor.
 
-1. Download the [latest release](https://github.com/elliotfontaine/tree-sitter-cylc/releases/) from GitHub.
+For manual installation, follow these steps:
+
+1. Download the [latest release](https://github.com/elliotfontaine/tree-sitter-cylc/releases/) or a specific commit from GitHub.
 2. Unzip the downloaded file.
 3. In Zed, open the Extensions manager (⇧⌘X on MacOS) and click on **_Install Dev Extension_**, then select the unzipped folder.
 
